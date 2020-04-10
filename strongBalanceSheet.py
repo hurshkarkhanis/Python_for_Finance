@@ -1,6 +1,6 @@
-#Simple Python program written while self teaching myself the language 
-#Used YouTube tutorials to pull data from Yahoo Finance, print daily statistics and display chart 
-#Used personal knowledge to integrate Stochastic RSI formula into program and plot on chart
+#Python program written while self teaching myself the language 
+#Used online web scraper turotials to pull balance sheet data from Yahoo Finance, 
+#Used personal knowledge to calculate financial ratios
 
 import datetime as dt
 import matplotlib.pyplot as plt
