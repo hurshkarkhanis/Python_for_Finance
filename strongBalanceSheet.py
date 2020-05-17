@@ -1,7 +1,6 @@
 #Simple Python program written while self teaching myself the language 
 #Used YouTube tutorials to pull financial statement data from Yahoo Finance, 
 #Used personal knowledge to calculate financial ratios
-
 import datetime as dt
 import matplotlib.pyplot as plt
 import pandas as pd 
@@ -28,7 +27,7 @@ class StrongBalanceSheetClass():
 
 	def getTickerInput(self):
 
-		self.ticker = raw_input("PLEASE ENTER COMPANY TICKER (AMERICAN COMPANIES ONLY) : ")
+		self.ticker = input("PLEASE ENTER COMPANY TICKER (AMERICAN COMPANIES ONLY) : ")
 
 		self.plugIn = 'balance-sheet'
 		self.url = 'https://finance.yahoo.com/quote/' + self.ticker + '/'+ self.plugIn +'?p=' + self.ticker
@@ -43,7 +42,7 @@ class StrongBalanceSheetClass():
 
 
 	def printCompanyName(self):
-		print self.companyName
+		print (self.companyName)
 	 
 	def makeBalanceSheet(self):
 
@@ -79,15 +78,15 @@ class StrongBalanceSheetClass():
 
 		for x in self.plugIn:
 			if(x != '-'):
-				print x.upper(),
+				print (x.upper()),
 			else:
-				print ' ',
-		print
-		print
+				print (' '),
+		print()
+		print()
 		
 
 		for x in self.fullBalanceSheet:
-			print x
+			print(x)
 			print
 		#print financial statement
 
@@ -133,18 +132,18 @@ class StrongBalanceSheetClass():
 
 		for x in self.plugIn:
 			if(x != '-'):
-				print x.upper(),
+				print(x.upper()),
 			else:
-				print ' ',
+				print(' '),
 		print
 
 		for x in self.fullCashFlow:
-			print x
+			print(x)
 			print
 
 
 	def setUpMetrics(self):
-		print self.companyName, "Metrics"
+		print (self.companyName, "Metrics")
 		print
 	
 	def buildCurrentRatio(self):
@@ -158,10 +157,10 @@ class StrongBalanceSheetClass():
 				totalCurrentLiabilities = x[1]
 
 		if totalCurrentAssets == 0 or totalCurrentLiabilities == 0:
-			print 'CURRENT RATIO: cannot caluclate, no current assets or liabilities listed'
+			print ('CURRENT RATIO: cannot caluclate, no current assets or liabilities listed')
 		else:
-			print 'CURRENT RATIO: ' , float(str(totalCurrentAssets).replace(',', '')) / int(str(totalCurrentLiabilities).replace(',', ''))
-		print
+			print ('CURRENT RATIO: ' , float(str(totalCurrentAssets).replace(',', '')) / int(str(totalCurrentLiabilities).replace(',', '')))
+		print()
 
 		#current ratio
 
@@ -180,9 +179,9 @@ class StrongBalanceSheetClass():
 			if x[0] == "Total Current Liabilities":
 				totalCurrentLiabilities = x[1]
 		if totalCurrentAssets == 0 or inventory == 0 or totalCurrentLiabilities == 0:
-			print 'QUICK RATIO: cannot caluclate, no inventory listed'
+			print ('QUICK RATIO: cannot caluclate, no inventory listed')
 		else:
-			print 'QUICK RATIO: ' , (float(str(totalCurrentAssets).replace(',', '')) - float(str(inventory).replace(',', ''))) / int(str(totalCurrentLiabilities).replace(',', ''))
+			print ('QUICK RATIO: ' , (float(str(totalCurrentAssets).replace(',', '')) - float(str(inventory).replace(',', ''))) / int(str(totalCurrentLiabilities).replace(',', '')))
 		print
 		#quick ratio
 
@@ -197,9 +196,9 @@ class StrongBalanceSheetClass():
 				totalSE = x[1]
 
 		if totalLiabilities == 0 or totalSE == 0:
-			print 'DEBT TO EQUITY RATIO: cannot caluclate, no liabilities or stockholders equity listed'
+			print ('DEBT TO EQUITY RATIO: cannot caluclate, no liabilities or stockholders equity listed')
 		else:
-			print 'DEBT TO EQUITY RATIO: ' , (float(str(totalLiabilities).replace(',', ''))) / int(str(totalSE).replace(',', ''))
+			print ('DEBT TO EQUITY RATIO: ' , (float(str(totalLiabilities).replace(',', ''))) / int(str(totalSE).replace(',', '')))
 		#debt to equity ratio
 
 	def buildTotalAssetToLiab(self):
@@ -212,9 +211,9 @@ class StrongBalanceSheetClass():
 			if x[0] == "Total Liabilities":
 				totalLiabilities = x[1]
 		if totalAssets == 0 or totalLiabilities == 0:
-			print 'TOTAL ASSETS / TOTAL LIAB.: cannot caluclate, no total assets or total liabilities listed'
+			print ('TOTAL ASSETS / TOTAL LIAB.: cannot caluclate, no total assets or total liabilities listed')
 		else:
-			print 'TOTAL ASSETS / TOTAL LIAB.: ' , (float(str(totalAssets).replace(',', ''))) / (int(str(totalLiabilities).replace(',', '')))
+			print ('TOTAL ASSETS / TOTAL LIAB.: ' , (float(str(totalAssets).replace(',', ''))) / (int(str(totalLiabilities).replace(',', ''))))
 		print
 		# total assets vs total liab
 
@@ -228,9 +227,9 @@ class StrongBalanceSheetClass():
 			if x[0] == "Total non-current liabilities":
 				totalSTliab = x[1]
 		if totalSTassets == 0 or totalSTliab == 0:
-			print 'TOTAL SHORT-TERM ASSETS / TOTAL SHORT-TERM LIAB.: cannot caluclate, no short term assets or short term liabilities listed'
+			print ('TOTAL SHORT-TERM ASSETS / TOTAL SHORT-TERM LIAB.: cannot caluclate, no short term assets or short term liabilities listed')
 		else:
-			print 'TOTAL SHORT-TERM ASSETS / TOTAL SHORT-TERM LIAB: ' , float(str(totalSTassets).replace(',', '')) / int(str(totalSTliab).replace(',', ''))
+			print ('TOTAL SHORT-TERM ASSETS / TOTAL SHORT-TERM LIAB: ' , float(str(totalSTassets).replace(',', '')) / int(str(totalSTliab).replace(',', '')))
 		print
 		#total short term assets vs liab
 
@@ -245,14 +244,14 @@ class StrongBalanceSheetClass():
 			if x[0] == "Total Liabilities":
 				totalLiabilities = x[1]
 		if freeCashFlow == 0 or totalLiabilities == 0:
-			print 'CASH FLOW / DEBT : cannot caluclate, no cash flow or total liabilities listed'
+			print ('CASH FLOW / DEBT : cannot caluclate, no cash flow or total liabilities listed')
 		else:
-			print 'CASH FLOW / DEBT: ' , float(str(freeCashFlow).replace(',', '')) / int(str(totalLiabilities).replace(',', ''))
-		print
+			print ('CASH FLOW / DEBT: ' , float(str(freeCashFlow).replace(',', '')) / int(str(totalLiabilities).replace(',', '')))
 		#cash flow vs debt
 
+
 	def line(self):
-		print "=============================================="
+		print ("==============================================")
 
 
 
