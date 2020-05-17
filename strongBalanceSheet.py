@@ -182,7 +182,7 @@ class StrongBalanceSheetClass():
 			print ('QUICK RATIO: cannot caluclate, no inventory listed')
 		else:
 			print ('QUICK RATIO: ' , (float(str(totalCurrentAssets).replace(',', '')) - float(str(inventory).replace(',', ''))) / int(str(totalCurrentLiabilities).replace(',', '')))
-		print
+		print()
 		#quick ratio
 
 	def buildDebtToEquity(self):
