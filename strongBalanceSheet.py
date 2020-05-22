@@ -222,9 +222,9 @@ class StrongBalanceSheetClass():
 			if x[0] == "Total non-current liabilities":
 				totalSTliab = x[1]
 		if totalSTassets == 0 or totalSTliab == 0:
-			print ('TOTAL SHORT-TERM ASSETS / TOTAL SHORT-TERM LIAB.: cannot caluclate, no short term assets or short term liabilities listed')
+			print ('TOTAL SHORT TERM ASSETS / TOTAL SHORT-TERM LIAB.: cannot caluclate, no short term assets or short term liabilities listed')
 		else:
-			print ('TOTAL SHORT-TERM ASSETS / TOTAL SHORT-TERM LIAB: ' , float(str(totalSTassets).replace(',', '')) / int(str(totalSTliab).replace(',', '')))
+			print ('TOTAL SHORT TERM ASSETS / TOTAL SHORT-TERM LIAB: ' , float(str(totalSTassets).replace(',', '')) / int(str(totalSTliab).replace(',', '')))
 		print
 		#total short term assets vs liab
 
