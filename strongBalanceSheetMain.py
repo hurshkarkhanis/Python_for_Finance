@@ -1,6 +1,5 @@
 from strongBalanceSheet import StrongBalanceSheetClass
 
-
 x = StrongBalanceSheetClass()
 
 x.getTickerInput()
