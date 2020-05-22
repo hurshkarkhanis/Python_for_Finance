@@ -1,11 +1,8 @@
 #Simple Python program written while self teaching myself the language 
 #Used YouTube tutorials to pull financial statement data from Yahoo Finance, 
 #Used personal knowledge to calculate financial ratios
-import datetime as dt
-import matplotlib.pyplot as plt
-import pandas as pd 
+
 import numpy as np
-import pandas_datareader.data as web 
 import requests
 import math
 
@@ -42,7 +39,8 @@ class StrongBalanceSheetClass():
 
 
 	def printCompanyName(self):
-		print (self.companyName)
+		print(self.companyName)
+		print()
 	 
 	def makeBalanceSheet(self):
 
@@ -78,16 +76,16 @@ class StrongBalanceSheetClass():
 
 		for x in self.plugIn:
 			if(x != '-'):
-				print (x.upper()),
+				print(x.upper(),end = '')
 			else:
-				print (' '),
+				print(' '),
 		print()
 		print()
 		
 
 		for x in self.fullBalanceSheet:
 			print(x)
-			print
+			print()
 		#print financial statement
 
 
@@ -132,14 +130,14 @@ class StrongBalanceSheetClass():
 
 		for x in self.plugIn:
 			if(x != '-'):
-				print(x.upper()),
+				print(x.upper(),end = '')
 			else:
 				print(' '),
-		print
+		print()
 
 		for x in self.fullCashFlow:
 			print(x)
-			print
+			print()
 
 
 	def setUpMetrics(self):
@@ -160,8 +158,6 @@ class StrongBalanceSheetClass():
 			print ('CURRENT RATIO: cannot caluclate, no current assets or liabilities listed')
 		else:
 			print ('CURRENT RATIO: ' , float(str(totalCurrentAssets).replace(',', '')) / int(str(totalCurrentLiabilities).replace(',', '')))
-		print()
-
 		#current ratio
 
 
