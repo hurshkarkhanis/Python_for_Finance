@@ -160,7 +160,6 @@ class StrongBalanceSheetClass():
 			print ('CURRENT RATIO: ' , float(str(totalCurrentAssets).replace(',', '')) / int(str(totalCurrentLiabilities).replace(',', '')))
 		#current ratio
 
-
 	def buildQuickRatio(self):
 		#quick ratio
 		totalCurrentAssets = 0.0
@@ -244,7 +243,6 @@ class StrongBalanceSheetClass():
 		else:
 			print ('CASH FLOW / DEBT: ' , float(str(freeCashFlow).replace(',', '')) / int(str(totalLiabilities).replace(',', '')))
 		#cash flow vs debt
-
 
 	def line(self):
 		print ("==============================================")
