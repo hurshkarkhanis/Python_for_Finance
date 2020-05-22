@@ -14,6 +14,7 @@ x.plugInAndURLCashFlow()
 x.makeCashFlow()
 
 x.line()
+x.line()
 
 x.setUpMetrics()
 
@@ -29,5 +30,6 @@ x.buildTotalSShortTermToLiab()
 
 x.buildCashFlowToDebt()
 
+x.line()
 x.line()
 
